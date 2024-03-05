@@ -20,6 +20,22 @@ public class TrianglePerimeterAndArea {
         String thirdEntry = scanner.nextLine();
         double sideC = Double.parseDouble(thirdEntry);
 
+        if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
+            System.out.println("The length of all sides should be a positive number");
+        }
+
+        if (sideA > sideB + sideC) {
+            System.out.println("Side A should not be greater than the sum of side B and side C");
+        }
+
+        if (sideB > sideA + sideC) {
+            System.out.println("Side B should not be greater than the sum of side A and side C");
+        }
+
+        if (sideC > sideA + sideB) {
+            System.out.println("Side C should not be greater than the sum of side A and side B");
+        }
+
         double trianglePerimeter = sideA + sideB + sideC;
         double s = (trianglePerimeter) / 2;
         double area = Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC)); // Heron's formula
